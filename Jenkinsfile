@@ -4,6 +4,9 @@ pipeline {
 		label 'roboshop'
 	     }
 	  }
+      environment {
+        course = "devops"
+      }
     stages {
         stage('Build') {
             steps {
