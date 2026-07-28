@@ -4,11 +4,14 @@ pipeline {
             label 'roboshop'
         }
     }
+       environment {
+        course = "devops"
+       }
     stages {
         stage('build') {
             steps {
                 echo "building..."
-                exit 1
+                #exit 1
             }
         }
         stage('test') {
