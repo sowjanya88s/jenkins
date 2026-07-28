@@ -21,7 +21,7 @@ pipeline {
             }
         }
     }
-}
+
 post {
 	always {
 	  echo 'i will say hello again!'
@@ -33,3 +33,4 @@ post {
 	  echo 'pipeline failure'
 		}
 	}
+}
