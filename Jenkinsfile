@@ -1,30 +1,39 @@
 pipeline {
     agent {
-        node {
-            label 'roboshop'
-        }
-    }
-       environment {
-        course = "devops"
-       }
+	node {
+		label 'ROBOSHOP'
+	     }
+	  }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                echo "building..."
+               script {
+		  sh " " "
+                     echo "building..." 
+		     exit 1
+                  " " "
+   		}
             }
         }
-        stage('test') {
+        stage('Test') {
             steps {
-                echo "testing..."
+                script {
+		  sh " " "
+                     echo "testing..." 
+                  " " "
+   		}
             }
         }
-        stage('deploy') {
+        stage('Deploy') {
             steps {
-                echo "deploying..."
+                script {
+		  sh " " "
+                     echo "deploying..." 
+                  " " "
+   		}
             }
         }
-    }
-
+    
 post {
 	always {
 	  echo 'i will say hello again!'
@@ -36,4 +45,5 @@ post {
 	  echo 'pipeline failure'
 		}
 	}
+}
 }
