@@ -8,6 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "building..."
+                exit 1
             }
         }
         stage('test') {
