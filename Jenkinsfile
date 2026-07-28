@@ -7,6 +7,9 @@ pipeline {
       environment {
         course = "devops"
       }
+      options {
+        disableConcurrentBuilds()
+      }
     stages {
         stage('Build') {
             steps {
