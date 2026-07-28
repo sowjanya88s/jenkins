@@ -8,27 +8,27 @@ pipeline {
         stage('Build') {
             steps {
                script {
-		         sh " " "
+		         sh """
                      echo "building..." 
-                  " " "
+                  """
    		}
             }
         }
         stage('Test') {
             steps {
                 script {
-		          sh " " "
+		          sh """
                      echo "testing..." 
-                  " " "
+                  """
    		}
             }
         }
         stage('Deploy') {
             steps {
                 script {
-		          sh " " "
+		          sh """
                      echo "deploying..." 
-                  " " "
+                  """
    		}
             }
         }
