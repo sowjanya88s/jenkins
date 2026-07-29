@@ -16,7 +16,7 @@ pipeline {
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        booleanParam(name: 'deploy', defaultValue: false, description: 'Toggle this value')
 
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 
@@ -42,13 +42,16 @@ pipeline {
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
                         echo "Toggle: ${params.TOGGLE}"
-                        echo "Choice: ${params.DEPLOY}" 
+                        echo "Choice: ${params.deploy}" 
                         echo "Password: ${params.PASSWORD}"
                   """
    		}
             }
         }
         stage('Deploy') {
+          when {
+                expression { "${params.deploy}" == "true" }
+            }
           input {
                 message "Should we continue?"
                 ok "Yes, we should."
